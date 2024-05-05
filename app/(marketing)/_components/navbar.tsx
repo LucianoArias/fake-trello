@@ -12,7 +12,7 @@ export default function Navbar() {
             <Link href="/sign-in">Iniciar sessión</Link>
           </Button>
           <Button size="sm" asChild>
-            <Link href="/sign-in">Registrar</Link>
+            <Link href="/sign-up">Registrar</Link>
           </Button>
         </div>
       </div>
