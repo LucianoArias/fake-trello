@@ -22,7 +22,7 @@ export default function ListOptions({ data, onAddCard }: ListOptionsProps) {
 
   const { execute: executeDelete } = useAction(deleteList, {
     onSuccess: (data) => {
-      toast.success(`Lista "${data.title}" borrada`);
+      toast.success(`Lista "${data.title}" eliminada`);
       closeRef.current?.click();
     },
     onError: (error) => {

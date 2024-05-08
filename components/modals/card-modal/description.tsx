@@ -8,7 +8,6 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useAction } from '@/hooks/use-action';
 import { CardWithList } from '@/types';
 import { useQueryClient } from '@tanstack/react-query';
-import { error } from 'console';
 import { AlignLeft } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import { ElementRef, useRef, useState } from 'react';
@@ -51,6 +50,11 @@ export default function Description({ data }: DescriptionProps) {
       queryClient.invalidateQueries({
         queryKey: ['card', data.id],
       });
+
+      queryClient.invalidateQueries({
+        queryKey: ['card-logs', data.id],
+      });
+
       toast.success(`Tarjeta "${data.title}" actualizada`);
       disableEditing();
     },
@@ -96,7 +100,7 @@ export default function Description({ data }: DescriptionProps) {
           <div
             onClick={enableEditing}
             role="button"
-            className="min-h-[78px] bg-neutral-200 text-sm font-semibold py-3 px-3.5 rounded-md"
+            className="min-h-[78px] bg-neutral-200 text-sm font-medium py-3 px-3.5 rounded-md"
           >
             {data.description || 'Añade una descripción más detallada...'}
           </div>

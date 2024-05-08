@@ -77,7 +77,7 @@ export default function ListForm() {
           />
           <input hidden value={params.boardId} name="boardId" />
           <div className="flex items-center gap-x-1">
-            <FormSubmit>Add list</FormSubmit>
+            <FormSubmit>Añadir lista</FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="ghost">
               <X className="h-5 w-5" />
             </Button>

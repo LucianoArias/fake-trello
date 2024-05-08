@@ -24,6 +24,11 @@ export default function Header({ data }: HeaderProps) {
       queryClient.invalidateQueries({
         queryKey: ['card', data.id],
       });
+
+      queryClient.invalidateQueries({
+        queryKey: ['card-logs', data.id],
+      });
+
       toast.success(`Renombrado a "${data.title}"`);
       setTitle(data.title);
     },
@@ -56,7 +61,7 @@ export default function Header({ data }: HeaderProps) {
 
   return (
     <div className="flex items-start gap-x-3 mb-6 w-full">
-      <Layout className="h-5 w-5 mt-1 text-neutral-700" />
+      <Layout className="h-5 w-5 mt-2.5 text-neutral-700" />
       <div className="w-full">
         <form action={onSubmit}>
           <FormInput

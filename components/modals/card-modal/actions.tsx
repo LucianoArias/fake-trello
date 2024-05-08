@@ -21,7 +21,7 @@ export default function Actions({ data }: ActionsProps) {
 
   const { execute: executeCopyCard, isLoading: isLoadingCopy } = useAction(copyCard, {
     onSuccess: (data) => {
-      toast.success(`Tarjeta "${data.title}" actualizada`);
+      toast.success(`Tarjeta "${data.title}" copiada`);
       cardModal.onClose();
     },
     onError: (error) => {
@@ -31,7 +31,7 @@ export default function Actions({ data }: ActionsProps) {
 
   const { execute: executeDeleteCard, isLoading: isLoadingDelete } = useAction(deleteCard, {
     onSuccess: (data) => {
-      toast.success(`Tarjeta "${data.title}" borrada`);
+      toast.success(`Tarjeta "${data.title}" eliminada`);
       cardModal.onClose();
     },
     onError: (error) => {

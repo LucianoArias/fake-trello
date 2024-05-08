@@ -24,7 +24,6 @@ export default function FormPicker({ id, errors }: FormPickerProps) {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        throw new Error('Unsplash error');
         const result = await unsplash.photos.getRandom({
           collectionIds: ['317099'],
           count: 9,
@@ -34,8 +33,7 @@ export default function FormPicker({ id, errors }: FormPickerProps) {
           const newImages = result.response as Array<Record<string, any>>;
           setImages(newImages);
         } else {
-          // console.log("Failed to get images from Unsplash");
-          console.log('No se pudieron obtener imágenes de Unsplash');
+          console.log('Failed to get images from Unsplash');
         }
       } catch (error) {
         console.log(error);
